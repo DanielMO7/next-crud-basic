@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+// Traer productos por ID
 export const GET = async (request, {params}) =>{
     const id = params.id
     const result = await fetch(`${process.env.API_URL}/${id}`,{
@@ -11,6 +12,7 @@ export const GET = async (request, {params}) =>{
     return NextResponse.json({data:product})
 }
 
+// Borrar productos por ID
 export const DELETE = async (request, {params}) => {
     const id =params.id
     const result = await fetch(`${process.env.API_URL}/${id}`,{
@@ -23,6 +25,7 @@ export const DELETE = async (request, {params}) => {
     return NextResponse.json({data: `Product ${product.id} deleted`})
 }
 
+// Actualizar productos por ID
 export const PUT = async (request, {params}) => {
     const id = params.id 
     const product = await request.json()

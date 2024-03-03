@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+// Traer Productos
 export const GET = async () => {
     const result = await fetch(process.env.API_URL, {
         headers:{
@@ -11,6 +12,7 @@ export const GET = async () => {
     
 };
 
+// Crear Productos
 export const POST = async (req) => {
     const product = await req.json()
     console.log(product);
